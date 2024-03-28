@@ -3,6 +3,13 @@
     <string name="btn_login">Login</string>
     <string name="text_main_page">Main page</string>
     <string name="btn_dont_have_account">Dont have an account?</string>
+    <string name="btn_registration">Registration</string>
     <string name="text_name">Your name</string>
+    <string name="text_surname">Your surname</string>
     <string name="text_pass">Your password</string>
+    <string name="text_pass_confirm">Password repeat</string>
+    <string name="text_login">Your login</string>
+    <string name="text_email">Your email</string>
+    <string name="text_date">Your date</string>
+    <string name="text_registration">Registration</string>
 </resources>
