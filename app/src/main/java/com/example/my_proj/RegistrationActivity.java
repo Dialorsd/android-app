@@ -46,14 +46,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 String login = registrationActivityLogin.getText().toString();
                 String name = registrationActivityName.getText().toString();
                 String surname = registrationActivitySurname.getText().toString();
+                if (isValidEmail(email) && isValidPassword(pass) && pass.equals(passRepeat) && isValidLogin(login) && isValidName(name) && isValidName(surname)) {
+                    saveData(name, pass, login, email, surname);
+                    pushToMenu();
+                } else {
+                    showInstruction("Fill in all fields correctly!");
+                }
 
-//                if (isValidEmail(email) && isValidPassword(pass) && pass.equals(passRepeat)
-//                        && isValidLogin(login) && isValidName(name) && isValidName(surname)) {
-//                    saveData(name, surname, pass, login, email);
-                pushToMenu();
-//                } else {
-//                    showInstruction("Fill in all fields correctly!");
-//                }
             }
         });
     }
@@ -88,7 +87,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private void showInstruction(String text) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
-    private void saveData(String name, String surname, String pass, String login, String email) {
+    private void saveData(String name, String pass, String login, String email, String surname) {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("email", email);

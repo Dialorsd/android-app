@@ -12,4 +12,9 @@
     <string name="text_email">Your email</string>
     <string name="text_date">Your date</string>
     <string name="text_registration">Registration</string>
+    <string name="text_menu">Menu</string>
+    <string name="btn_logout">Log out</string>
+    <string name="btn_projects">Projects</string>
+    <string name="btn_employees">Employees</string>
+
 </resources>
