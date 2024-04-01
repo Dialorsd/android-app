@@ -16,5 +16,7 @@
     <string name="btn_logout">Log out</string>
     <string name="btn_projects">Projects</string>
     <string name="btn_employees">Employees</string>
+    <string name="btn_return_to_menu">Return to menu</string>
+    <string name="btn_more">More</string>
 
 </resources>

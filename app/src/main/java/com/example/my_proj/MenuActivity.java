@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
     private Button menuActivityLogout;
+    private Button menuActivityBtnEmployees;
     private TextView menuActivityName;
     private TextView menuActivitySurname;
     private TextView menuActivityEmail;
@@ -28,6 +29,7 @@ public class MenuActivity extends AppCompatActivity {
         menuActivityEmail = findViewById(R.id.menuActivityEmail);
         menuActivityLogin = findViewById(R.id.menuActivityLogin);
         menuActivityLogout = findViewById(R.id.menuActivityLogout);
+        menuActivityBtnEmployees = findViewById(R.id.menuActivityBtnEmployees);
 
         String savedName = sharedPreferences.getString("name", "Name: --");
         String savedSurname = sharedPreferences.getString("surname", "Surname: --");
@@ -48,9 +50,19 @@ public class MenuActivity extends AppCompatActivity {
                 finishAffinity();
             }
         });
+        menuActivityBtnEmployees.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushToWorkers();
+            }
+        });
     }
     private void pushToLogin() {
         Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+    private void pushToWorkers() {
+        Intent intent = new Intent(this, WorkersActivity.class);
         startActivity(intent);
     }
 }
