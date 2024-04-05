@@ -7,9 +7,9 @@
     android:background="@color/grey">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewWorkers"
-        android:layout_width="match_parent"
-        android:layout_height="682dp"
+        android:id="@+id/recyclerViewProjects"
+        android:layout_width="410dp"
+        android:layout_height="660dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -18,25 +18,14 @@
         app:layout_constraintVertical_bias="0.979" />
 
     <Button
-        android:id="@+id/workersReturnToMenu"
+        android:id="@+id/projectsReturnToMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/green"
         android:text="@string/btn_return_to_menu"
         app:cornerRadius="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/workers_add_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/btn_add_worker"
-        app:cornerRadius="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

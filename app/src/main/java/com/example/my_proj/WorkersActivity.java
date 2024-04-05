@@ -19,13 +19,14 @@ public class WorkersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workers);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        Button workersReturnToMenu;
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewWorkers);
+        Button workersReturnToMenu, workers_add_btn;
         workersReturnToMenu = findViewById(R.id.workersReturnToMenu);
+        workers_add_btn = findViewById(R.id.workers_add_btn);
 
         List<Item> items = new ArrayList<Item>();
         for (int i = 1; i <= 10; i++) {
-            String name = "Worker: " + i;
+            String name = "Worker: Max Yakovishchuk";
             String category;
 
             if (i % 2 == 0) {
@@ -48,9 +49,17 @@ public class WorkersActivity extends AppCompatActivity {
                 pushToMenu();
             }
         });
+        workers_add_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                items.add(new Item("New worker", "Position: CEO",2224.234f));
+                recyclerView.setAdapter(new MyAdapter(getApplicationContext(), items));
+            }
+        });
     }
     private void pushToMenu() {
         Intent intent = new Intent(this, MenuActivity.class);
         startActivity(intent);
     }
+
 }

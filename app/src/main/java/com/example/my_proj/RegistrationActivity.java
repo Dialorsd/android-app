@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private Button registrationActivityBtn;
+    private Button registrationActivityBtn, registrationActivityBackBtn;
     private EditText registrationActivityEmail;
     private EditText registrationActivityPass;
     private EditText registrationActivityPassRepeat;
@@ -30,6 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         registrationActivityBtn = findViewById(R.id.registrationActivityBtn);
+        registrationActivityBackBtn = findViewById(R.id.registrationActivityBackBtn);
         registrationActivityEmail = findViewById(R.id.registrationActivityEmail);
         registrationActivityPass = findViewById(R.id.registrationActivityPass);
         registrationActivityPassRepeat = findViewById(R.id.registrationActivityPassRepeat);
@@ -53,6 +54,12 @@ public class RegistrationActivity extends AppCompatActivity {
                     showInstruction("Fill in all fields correctly!");
                 }
 
+            }
+        });
+        registrationActivityBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushToLogin();
             }
         });
     }
@@ -81,6 +88,10 @@ public class RegistrationActivity extends AppCompatActivity {
 
     private void pushToMenu() {
         Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
+    private void pushToLogin() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

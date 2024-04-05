@@ -10,35 +10,20 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
-    private Button menuActivityLogout;
-    private Button menuActivityBtnEmployees;
-    private TextView menuActivityName;
-    private TextView menuActivitySurname;
-    private TextView menuActivityEmail;
-    private TextView menuActivityLogin;
+    private Button menuActivityLogout, menuActivityProfile;
+    private Button menuActivityBtnEmployees, menuActivityBtnProjects;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
 
-        menuActivityName = findViewById(R.id.menuActivityName);
-        menuActivitySurname = findViewById(R.id.menuActivitySurname);
-        menuActivityEmail = findViewById(R.id.menuActivityEmail);
-        menuActivityLogin = findViewById(R.id.menuActivityLogin);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE);
         menuActivityLogout = findViewById(R.id.menuActivityLogout);
         menuActivityBtnEmployees = findViewById(R.id.menuActivityBtnEmployees);
-
-        String savedName = sharedPreferences.getString("name", "Name: --");
-        String savedSurname = sharedPreferences.getString("surname", "Surname: --");
-        String savedEmail = sharedPreferences.getString("email", "Email: --");
-        String savedLogin = sharedPreferences.getString("login", "Login: --");
-        menuActivityName.setText(savedName);
-        menuActivitySurname.setText(savedSurname);
-        menuActivityEmail.setText(savedEmail);
-        menuActivityLogin.setText(savedLogin);
+        menuActivityBtnProjects = findViewById(R.id.menuActivityBtnProjects);
+        menuActivityProfile = findViewById(R.id.menuActivityProfile);
 
         menuActivityLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +41,18 @@ public class MenuActivity extends AppCompatActivity {
                 pushToWorkers();
             }
         });
+        menuActivityBtnProjects.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushToProjects();
+            }
+        });
+        menuActivityProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushToProfile();
+            }
+        });
     }
     private void pushToLogin() {
         Intent intent = new Intent(this, MainActivity.class);
@@ -63,6 +60,14 @@ public class MenuActivity extends AppCompatActivity {
     }
     private void pushToWorkers() {
         Intent intent = new Intent(this, WorkersActivity.class);
+        startActivity(intent);
+    }
+    private void pushToProjects() {
+        Intent intent = new Intent(this, ProjectsActivity.class);
+        startActivity(intent);
+    }
+    private void pushToProfile() {
+        Intent intent = new Intent(this, ProfileActivity.class);
         startActivity(intent);
     }
 }

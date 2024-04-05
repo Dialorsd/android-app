@@ -2,6 +2,7 @@ package com.example.my_proj;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -31,6 +32,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         holder.position.setText(items.get(position).getPosition());
         float salary = (items.get(position).getSalary());
         holder.salary.setText(String.valueOf(salary));
+
+        holder.delete_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                items.remove(position);
+                notifyItemRemoved(position);
+                notifyItemRangeChanged(position, items.size());
+            }
+        });
     }
 
     @Override

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:backgroundTint="@color/grey"
     tools:context=".MainActivity">
 
     <Button
@@ -53,9 +55,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
-        android:hint="@string/text_name"
+        android:hint="@string/text_login"
         android:inputType="text"
         android:minHeight="48dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -70,6 +73,8 @@
         android:ems="10"
         android:hint="@string/text_pass"
         android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/hint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

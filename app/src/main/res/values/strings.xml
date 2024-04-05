@@ -15,8 +15,11 @@
     <string name="text_menu">Menu</string>
     <string name="btn_logout">Log out</string>
     <string name="btn_projects">Projects</string>
-    <string name="btn_employees">Employees</string>
+    <string name="btn_employees">Workers</string>
     <string name="btn_return_to_menu">Return to menu</string>
     <string name="btn_more">More</string>
-
+    <string name="btn_back">Back</string>
+    <string name="btn_profile">Profile</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_add_worker">Add worker</string>
 </resources>
