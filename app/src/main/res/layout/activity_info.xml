@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey">
+    android:background="@color/white">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewWorkers"
+        android:id="@+id/recyclerViewInfo"
         android:layout_width="match_parent"
         android:layout_height="682dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,25 +18,26 @@
         app:layout_constraintVertical_bias="0.979" />
 
     <Button
-        android:id="@+id/workersReturnToMenu"
-        android:layout_width="wrap_content"
+        android:id="@+id/infoReturnToMenu"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/btn_return_to_menu"
-        app:cornerRadius="4dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-4dp"
+        android:backgroundTint="@color/black"
+        android:text="BACK"
+        app:cornerRadius="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/workers_add_btn"
+        android:id="@+id/info_add_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:backgroundTint="@color/green"
-        android:text="@string/btn_add_worker"
-        app:cornerRadius="4dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="0dp"
+        android:backgroundTint="@color/black"
+        android:text="ADD"
+        app:cornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -59,11 +58,11 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void pushToWorkers() {
-        Intent intent = new Intent(this, WorkersActivity.class);
+        Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
     }
     private void pushToProjects() {
-        Intent intent = new Intent(this, ProjectsActivity.class);
+        Intent intent = new Intent(this, ContactsActivity.class);
         startActivity(intent);
     }
     private void pushToProfile() {

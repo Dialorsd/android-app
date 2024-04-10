@@ -11,27 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class ProjectsActivity extends AppCompatActivity {
+public class ContactsActivity extends AppCompatActivity {
 
     Button projectsReturnToMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_projects);
+        setContentView(R.layout.activity_contacts);
 
-        projectsReturnToMenu = findViewById(R.id.projectsReturnToMenu);
+        projectsReturnToMenu = findViewById(R.id.projectReturnToMenu);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewProjects);
+        RecyclerView recyclerView = findViewById(R.id.recyclerViewProject);
 
-        List<Item> items = new ArrayList<Item>();
+        List<Item> items = new ArrayList<>();
+        String[] categories = {"Co-workers", "Friends", "Family"};
+        Random random = new Random();
+
         for (int i = 1; i <= 10; i++) {
-            String name = "Name: Project " + i;
-            String category = "Workers: ";
+            String name = "Contact " + i;
+            String category = categories[random.nextInt(categories.length)];
             float price = i;
 
-            items.add(new Item(name, category, price));
+            items.add(new Item(name, category));
         }
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
